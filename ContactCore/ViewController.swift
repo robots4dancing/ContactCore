@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var contactArray = [Contact]()
+    
+    var managedContext                  :NSManagedObjectContext!
     
     @IBOutlet var contactTableView  : UITableView!
     
@@ -41,11 +44,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.detailTextLabel!.text = currentContact.phoneNumber
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let contactToDelete = contactArray[indexPath.row]
+            managedContext.delete(contactToDelete)
+            appDelegate.saveContext()
+            contactArray = appDelegate.fetchAllContacts()
+            contactTableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.isEditing = false
+        }
+    }
 
     //MARK: - Life Cycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        managedContext = appDelegate.persistentContainer.viewContext
     }
     
     override func viewWillAppear(_ animated: Bool) {
