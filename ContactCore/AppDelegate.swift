@@ -13,7 +13,24 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //MARK: - Core Data Methods
+    
+    func fetchAllContacts() -> [Contact] {
+        let fetchRequest = NSFetchRequest<Contact>(entityName: "Contact")
+        let sortDescriptor1 = NSSortDescriptor(key: "lastName", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "firstName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+        var results = [Contact]()
+        do {
+            results = try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Fetch Error \(error)")
+        }
+        return results
+    }
 
+    //MARK: - Life Cycle Methods
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

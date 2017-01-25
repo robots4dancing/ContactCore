@@ -9,15 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var contactArray = [Contact]()
+
+    //MARK: - Life Cycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        contactArray = appDelegate.fetchAllContacts()
+        print("Count \(contactArray.count)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
