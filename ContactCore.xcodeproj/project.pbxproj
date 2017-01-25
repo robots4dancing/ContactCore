@@ -13,6 +13,7 @@
 		81EB8E2B1E382D0F004B7061 /* ContactCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81EB8E291E382D0F004B7061 /* ContactCore.xcdatamodeld */; };
 		81EB8E2D1E382D0F004B7061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EB8E2C1E382D0F004B7061 /* Assets.xcassets */; };
 		81EB8E301E382D0F004B7061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EB8E2E1E382D0F004B7061 /* LaunchScreen.storyboard */; };
+		81EB8E381E38347F004B7061 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB8E371E38347F004B7061 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		81EB8E2C1E382D0F004B7061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81EB8E2F1E382D0F004B7061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81EB8E311E382D0F004B7061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81EB8E371E38347F004B7061 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				81EB8E221E382D0F004B7061 /* AppDelegate.swift */,
 				81EB8E241E382D0F004B7061 /* ViewController.swift */,
+				81EB8E371E38347F004B7061 /* DetailViewController.swift */,
 				81EB8E261E382D0F004B7061 /* Main.storyboard */,
 				81EB8E2C1E382D0F004B7061 /* Assets.xcassets */,
 				81EB8E2E1E382D0F004B7061 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				81EB8E251E382D0F004B7061 /* ViewController.swift in Sources */,
 				81EB8E2B1E382D0F004B7061 /* ContactCore.xcdatamodeld in Sources */,
 				81EB8E231E382D0F004B7061 /* AppDelegate.swift in Sources */,
+				81EB8E381E38347F004B7061 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
